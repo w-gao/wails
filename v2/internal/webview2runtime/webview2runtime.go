@@ -88,8 +88,7 @@ func InstallUsingEmbeddedBootstrapper() (bool, error) {
 		return false, err
 	}
 
-	return result, os.Remove(installer)
-
+	return result, nil
 }
 
 // InstallUsingBootstrapper will extract the embedded bootstrapper from Microsoft and run it to install
@@ -108,8 +107,7 @@ func InstallUsingBootstrapper() (bool, error) {
 		return false, err
 	}
 
-	return result, os.Remove(installer)
-
+	return result, nil
 }
 
 func runInstaller(installer string) (bool, error) {

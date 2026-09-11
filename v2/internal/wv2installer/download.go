@@ -28,8 +28,8 @@ func doInstallationStrategy(installStatus installationStatus, messages *windows.
 		return err
 	}
 	if !installedCorrectly {
-		err = webview2runtime.Error(messages.FailedToInstall, messages.Error)
-		return err
+		_ = webview2runtime.Error(messages.FailedToInstall, messages.Error)
+		return errors.New(messages.FailedToInstall)
 	}
 	return nil
 }
